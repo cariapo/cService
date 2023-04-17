@@ -1,8 +1,8 @@
 package credential
 
 import (
-	"github.com/cuwand/cservice/credential/model/request"
-	"github.com/cuwand/cservice/credential/model/response"
+	"github.com/cariapo/cservice/credential/model/request"
+	"github.com/cariapo/cservice/credential/model/response"
 	"github.com/cuwand/pondasi/helper/httpHelper"
 	"github.com/cuwand/pondasi/logger"
 	"net/http"

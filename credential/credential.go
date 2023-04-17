@@ -1,8 +1,8 @@
 package credential
 
 import (
-	"github.com/cuwand/cservice/credential/model/request"
-	"github.com/cuwand/cservice/credential/model/response"
+	"github.com/cariapo/cservice/credential/model/request"
+	"github.com/cariapo/cservice/credential/model/response"
 )
 
 type CredentialOutbound interface {
