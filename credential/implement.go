@@ -34,6 +34,7 @@ func (i implementOutbound) Authorize(accessToken string) (*response.Authorize, e
 		Client:     i.config.HttpClient,
 		TimeoutReq: i.config.Timeout,
 		Logger:     i.Logger,
+		Converter:  CredentialConverter,
 		Header: &http.Header{
 			"Accept":        []string{httpHelper.ContentTypeApplicationJson},
 			"Authorization": []string{accessToken},
@@ -59,6 +60,7 @@ func (i implementOutbound) Oauth(req request.StoreToken) (*response.StoreToken, 
 		Logger:     i.Logger,
 		Client:     i.config.HttpClient,
 		TimeoutReq: i.config.Timeout,
+		Converter:  CredentialConverter,
 		Header: &http.Header{
 			"Content-Type":  []string{httpHelper.ContentTypeApplicationFormUrlEncoded},
 			"Accept":        []string{httpHelper.ContentTypeApplicationJson},

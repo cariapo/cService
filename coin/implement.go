@@ -48,6 +48,7 @@ func (i implementOutbound) FindAccountByNumber(req request.FindAccountByNumber) 
 		Client:     i.config.HttpClient,
 		TimeoutReq: i.config.Timeout,
 		Logger:     i.Logger,
+		Converter:  CoinConverter,
 		Header: &http.Header{
 			"Accept":        []string{httpHelper.ContentTypeApplicationJson},
 			"Authorization": []string{req.AccessToken},
@@ -69,6 +70,7 @@ func (i implementOutbound) FindAccountById(req request.FindAccountById) (*respon
 		Client:     i.config.HttpClient,
 		TimeoutReq: i.config.Timeout,
 		Logger:     i.Logger,
+		Converter:  CoinConverter,
 		Header: &http.Header{
 			"Accept":        []string{httpHelper.ContentTypeApplicationJson},
 			"Authorization": []string{req.AccessToken},
@@ -90,6 +92,7 @@ func (i implementOutbound) FindCustomerByCIF(req request.FindCustomerByCif) (*re
 		Client:     i.config.HttpClient,
 		TimeoutReq: i.config.Timeout,
 		Logger:     i.Logger,
+		Converter:  CoinConverter,
 		Header: &http.Header{
 			"Accept":        []string{httpHelper.ContentTypeApplicationJson},
 			"Authorization": []string{req.AccessToken},
@@ -111,6 +114,7 @@ func (i implementOutbound) FindCustomerById(req request.FindCustomerById) (*resp
 		Client:     i.config.HttpClient,
 		TimeoutReq: i.config.Timeout,
 		Logger:     i.Logger,
+		Converter:  CoinConverter,
 		Header: &http.Header{
 			"Accept":        []string{httpHelper.ContentTypeApplicationJson},
 			"Authorization": []string{req.AccessToken},
@@ -133,6 +137,7 @@ func (i implementOutbound) Overbooking(req request.Overbooking) (*response.Overb
 		Client:     i.config.HttpClient,
 		TimeoutReq: i.config.Timeout,
 		Logger:     i.Logger,
+		Converter:  CoinConverter,
 		Header: &http.Header{
 			"Accept":        []string{httpHelper.ContentTypeApplicationJson},
 			"Authorization": []string{req.AccessToken},
@@ -155,6 +160,7 @@ func (i implementOutbound) OverbookingMultiBeneficiary(req request.OverbookingMu
 		Client:     i.config.HttpClient,
 		TimeoutReq: i.config.Timeout,
 		Logger:     i.Logger,
+		Converter:  CoinConverter,
 		Header: &http.Header{
 			"Accept":        []string{httpHelper.ContentTypeApplicationJson},
 			"Authorization": []string{req.AccessToken},
@@ -177,6 +183,7 @@ func (i implementOutbound) Reversal(req request.Reversal) (*response.Reversal, e
 		Client:     i.config.HttpClient,
 		TimeoutReq: i.config.Timeout,
 		Logger:     i.Logger,
+		Converter:  CoinConverter,
 		Header: &http.Header{
 			"Accept":        []string{httpHelper.ContentTypeApplicationJson},
 			"Authorization": []string{req.AccessToken},
@@ -215,6 +222,7 @@ func (i implementOutbound) Statements(req request.Statement) (*response.ListStat
 		Client:      i.config.HttpClient,
 		TimeoutReq:  i.config.Timeout,
 		Logger:      i.Logger,
+		Converter:   CoinConverter,
 		Header: &http.Header{
 			"Accept":        []string{httpHelper.ContentTypeApplicationJson},
 			"Authorization": []string{req.AccessToken},
