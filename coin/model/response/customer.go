@@ -10,3 +10,13 @@ type Customer struct {
 	} `json:"data"`
 	Timestamp int64 `json:"timestamp"`
 }
+
+type ExistsCustomer struct {
+	Code    int  `json:"code"`
+	Success bool `json:"success"`
+	Data    struct {
+		CIF    string `json:"cif,omitempty"` // 312401
+		Exists bool `json:"exists"`
+	} `json:"data"`
+	Timestamp int64 `json:"timestamp"`
+}

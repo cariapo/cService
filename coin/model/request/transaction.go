@@ -1,31 +1,31 @@
 package request
 
 type Overbooking struct {
-	AccessToken              string  `json:"-" form:"-"`
-	CustomerReferenceNumber  string  `json:"customer_reference_number" binding:"required"`
-	SourceAccountNumber      string  `json:"source_account_number" binding:"required"`
-	BeneficiaryAccountNumber string  `json:"beneficiary_account_number" binding:"required"`
-	TrxAmount                float64 `json:"trx_amount" binding:"required"`
-	Remark                   string  `json:"remark" binding:"required"`
+	AccessToken              *string `json:"-"`
+	CustomerReferenceNumber  string  `json:"customer_reference_number"`
+	SourceAccountNumber      string  `json:"source_account_number"`
+	BeneficiaryAccountNumber string  `json:"beneficiary_account_number"`
+	TrxAmount                float64 `json:"trx_amount"`
+	Remark                   string  `json:"remark"`
 }
 
 type OverbookingMultiBeneficiary struct {
-	AccessToken             string               `json:"-" form:"-"`
-	CustomerReferenceNumber string               `json:"customer_reference_number" binding:"required"`
-	SourceAccountNumber     string               `json:"source_account_number" binding:"required"`
-	BeneficiaryAccounts     []BeneficiaryAccount `json:"beneficiary_accounts" binding:"required"`
-	TotalTrxAmount          float64              `json:"total_trx_amount" binding:"required"`
+	AccessToken             *string              `json:"-" form:"-"`
+	CustomerReferenceNumber string               `json:"customer_reference_number"`
+	SourceAccountNumber     string               `json:"source_account_number"`
+	BeneficiaryAccounts     []BeneficiaryAccount `json:"beneficiary_accounts"`
+	TotalTrxAmount          float64              `json:"total_trx_amount"`
 }
 
 type BeneficiaryAccount struct {
-	BeneficiaryAccountNumber string  `json:"beneficiary_account_number" binding:"required"`
-	TrxAmount                float64 `json:"trx_amount" binding:"required"`
-	Remark                   string  `json:"remark" binding:"required"`
+	BeneficiaryAccountNumber string  `json:"beneficiary_account_number"`
+	TrxAmount                float64 `json:"trx_amount"`
+	Remark                   string  `json:"remark"`
 }
 
 type Reversal struct {
-	AccessToken             string  `json:"-" form:"-"`
-	CustomerReferenceNumber string  `json:"customer_reference_number"  binding:"required"`
-	ReferenceNumber         string  `json:"reference_number"  binding:"required"`
-	Amount                  float64 `json:"amount"  binding:"required"`
+	AccessToken             *string `json:"-" form:"-"`
+	CustomerReferenceNumber string  `json:"customer_reference_number"`
+	ReferenceNumber         string  `json:"reference_number"`
+	Amount                  float64 `json:"amount"`
 }

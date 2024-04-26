@@ -1,4 +1,4 @@
-package coin
+package cuan
 
 import (
 	"encoding/json"
@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-func CoinErrorInterceptor(resp *http.Response, logger logger.Logger, err error) error {
+func CuanErrorInterceptor(resp *http.Response, logger logger.Logger, err error) error {
 	if err, ok := err.(net.Error); ok && err.Timeout() {
 		return errors.InternalServerError("Internal Service Request Timeout - Credential Service")
 	}

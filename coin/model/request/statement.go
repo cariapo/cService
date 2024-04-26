@@ -9,7 +9,7 @@ import (
 type Statement struct {
 	models.Paging
 	AccountNumber     string                                    `json:"-" form:"-"`
-	AccessToken       string                                    `json:"-" form:"-"`
-	TransactionStatus *transactionStatusEnums.TransactionStatus `form:"transaction_status"`
-	TransactionFlow   *transactionFlowEnums.TransactionFlow     `form:"transaction_flow"`
+	AccessToken       *string                                   `json:"-" form:"-"`
+	TransactionStatus *transactionStatusEnums.TransactionStatus
+	TransactionFlow   *transactionFlowEnums.TransactionFlow
 }
